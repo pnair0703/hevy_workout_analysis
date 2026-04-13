@@ -1,0 +1,50 @@
+Title: Exercise Selection and Programming for Intermediate-Advanced Lifters
+Source: Compiled from Helms (Muscle and Strength Pyramids), Israetel (RP), Nuckols (Stronger By Science)
+
+EXERCISE SELECTION PRINCIPLES
+The most effective exercises for hypertrophy are those that challenge the target muscle through a full range of motion, allow progressive overload, and can be performed safely with high effort. Compound movements should form the foundation of a program, supplemented by isolation work for lagging muscle groups.
+
+For chest development, the incline press (15-30 degree angle) targets the clavicular head of the pectoralis major, which is often underdeveloped in lifters who exclusively flat bench. A combination of flat and incline pressing, plus a fly or cable crossover movement, provides comprehensive chest stimulation.
+
+For back development, a combination of vertical pulling (pulldowns, pull-ups) and horizontal pulling (rows) is recommended. Vertical pulls emphasize lat width while horizontal pulls emphasize mid-back thickness. Most programs benefit from a 1:1 ratio of vertical to horizontal pulling movements.
+
+COMPOUND VS ISOLATION
+Compound exercises (squat, bench, row, overhead press, deadlift variations) provide the most stimulus per unit of time and should constitute 60-70% of total training volume. Isolation exercises are best used to bring up lagging muscle groups that don't receive adequate stimulation from compounds, such as lateral delts, rear delts, biceps, calves, and direct hamstring work.
+
+REP RANGES FOR HYPERTROPHY
+The hypertrophy rep range is broader than commonly believed. Schoenfeld et al. (2021) demonstrated that rep ranges from 6-30 can produce similar hypertrophy when sets are taken close to failure (RPE 7-10). However, practical considerations favor:
+- Heavy compounds: 5-8 reps (RPE 7-9) for strength and mechanical tension
+- Moderate compounds: 8-12 reps (RPE 8-9) for a balance of tension and metabolic stress
+- Isolation exercises: 10-15 reps (RPE 8-10) for maximizing metabolic stress and minimizing joint stress
+
+PUSH-PULL-LEGS (PPL) SPLIT
+PPL is one of the most effective training splits for intermediate lifters training 5-6 days per week. It allows each muscle group to be trained twice per week while providing adequate recovery between sessions. A typical PPL structure:
+
+Push: Chest, shoulders (anterior and lateral), triceps
+Pull: Back (lats and mid-back), rear delts, biceps
+Legs: Quads, hamstrings, glutes, calves
+
+For a 5-day split, one common approach is Upper/Lower/Push/Pull/Legs, which provides slightly more frequency for the upper body while keeping lower body at adequate volume.
+
+STALL BREAKING STRATEGIES
+When progress stalls on a lift, consider the following progression:
+1. Check recovery factors first: sleep, nutrition, stress, deficit severity
+2. Add a rep at the same weight before adding weight
+3. Add a set (increase volume slightly)
+4. Change the exercise variation temporarily (e.g., swap flat bench for incline)
+5. Implement a deload week, then resume with a slight volume reduction
+6. Modify rep range (move from 5s to 8s, or vice versa)
+
+For bench press specifically, common stall-breakers include:
+- Adding a close-grip bench variation for triceps emphasis
+- Increasing overhead pressing volume for shoulder strength
+- Adding paused reps to improve strength off the chest
+- Addressing pec isolation if chest is the weak point in the lift
+
+TRAINING FREQUENCY
+Meta-analyses suggest training each muscle group 2x per week is superior to 1x per week for hypertrophy. There is limited evidence that 3x per week provides additional benefit over 2x per week for most muscle groups. However, for lagging muscle groups, increasing frequency to 3x per week can help accumulate more volume without excessive per-session fatigue.
+
+RPE AND AUTOREGULATION
+Rate of Perceived Exertion (RPE) is a subjective measure of effort on a 1-10 scale, where 10 is absolute failure. For hypertrophy training, most working sets should be performed at RPE 7-9 (1-3 reps in reserve). Training to failure (RPE 10) on every set increases fatigue disproportionately to the additional stimulus and should be reserved for the last set of an exercise or for isolation movements.
+
+During a caloric deficit, RPE-based autoregulation is especially important because day-to-day performance varies more than during a surplus. If a weight that normally feels like RPE 8 feels like RPE 9.5, reduce the weight rather than grinding through poor-quality reps.

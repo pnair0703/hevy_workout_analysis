@@ -1,0 +1,43 @@
+Title: Training Volume for Hypertrophy — Evidence-Based Guidelines
+Source: Compiled from Schoenfeld et al. (2017), Israetel et al. (2019), Helms et al. (2015)
+
+MINIMUM EFFECTIVE VOLUME (MEV)
+The minimum effective volume is the lowest number of weekly sets per muscle group that still produces measurable hypertrophy. Research suggests MEV for most muscle groups is approximately 8-10 hard sets per week. Below this threshold, a trained individual may maintain muscle mass but is unlikely to see meaningful growth.
+
+For smaller muscle groups (biceps, triceps, rear delts, calves), MEV may be slightly lower at 6-8 sets per week. For larger muscle groups (quads, back, chest), MEV is typically 10+ sets per week.
+
+MAXIMUM RECOVERABLE VOLUME (MRV)
+MRV is the highest volume from which an individual can still recover within a mesocycle. Exceeding MRV leads to accumulated fatigue, performance decrements, and potential overtraining. MRV varies significantly between individuals and is affected by training age, nutrition, sleep, and stress.
+
+General MRV estimates per muscle group per week:
+- Chest: 20-22 sets
+- Back: 20-23 sets
+- Quads: 18-20 sets
+- Hamstrings: 14-16 sets
+- Shoulders: 20-22 sets
+- Biceps: 18-20 sets
+- Triceps: 16-18 sets
+- Calves: 14-16 sets
+- Glutes: 14-16 sets
+
+DOSE-RESPONSE RELATIONSHIP
+Schoenfeld et al. (2017) conducted a meta-analysis showing a dose-response relationship between weekly sets and hypertrophy. Higher volumes (10+ sets per muscle group per week) produced greater muscle growth than lower volumes (less than 5 sets), with the relationship being graded — each additional set provides diminishing but still positive returns up to MRV.
+
+PRACTICAL RECOMMENDATIONS
+For most trained individuals, 10-20 sets per muscle group per week represents the productive training zone. Starting at the lower end of this range and progressively increasing volume over mesocycles (periodized approach) is the most sustainable strategy.
+
+VOLUME DURING A CALORIC DEFICIT
+Helms et al. (2015) recommend reducing training volume by approximately 20-30% during a caloric deficit while maintaining training intensity (load on the bar). The rationale is that intensity is the primary driver of muscle retention, while volume is the primary driver of growth. During a deficit, the goal shifts from growth to preservation, so volume can be reduced to accommodate impaired recovery capacity.
+
+Protein intake should be elevated to 1.0-1.2g per pound of bodyweight during a deficit to further support muscle retention. Training frequency can be reduced by one session per week if recovery is noticeably impaired.
+
+VOLUME DURING A CALORIC SURPLUS
+During a surplus, recovery capacity is enhanced. This allows for higher training volumes (toward MRV) and more aggressive progressive overload. Volume can be increased by 10-20% above maintenance levels. Training frequency of 2x per muscle group per week is generally optimal for distributing volume and maximizing the muscle protein synthesis response.
+
+PROGRESSIVE OVERLOAD
+Progressive overload remains the fundamental driver of adaptation. This can be achieved through increasing weight, reps, sets, or reducing rest periods. For hypertrophy, the most effective form of progressive overload is adding reps within a target range (e.g., 8-12), then increasing weight when the top of the range is achieved at the target RPE.
+
+DELOAD PROTOCOLS
+A deload (planned reduction in training stress) should be implemented every 4-8 weeks depending on training advancement and volume accumulation. During a deload, reduce volume by 40-50% while maintaining intensity at 85-90% of normal working weights. Deload duration is typically one week.
+
+Signs that a deload is needed include: persistent joint soreness, stalled or declining performance across multiple exercises over 2+ weeks, elevated resting heart rate, disrupted sleep quality, and decreased motivation to train.

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "chest_gap",
+    "name": "Critical chest volume gap",
+    "query": "What should I change about my current program?",
+    "context": "User is cutting at 2500 cal, 171 lbs, chest volume is 1 set/wk, target is 10-13 sets/wk.",
+    "expected_criteria": [
+      "Must identify chest as critically undertrained or a gap",
+      "Must recommend specific chest exercises (e.g. bench press, incline press, or fly variations)",
+      "Must provide specific set and rep recommendations",
+      "Should account for the caloric deficit when recommending volume increases"
+    ]
+  },
+  {
+    "id": "stalled_bench_cutting",
+    "name": "Stalled bench press during a cut",
+    "query": "My incline bench has stalled at 200 lbs and I'm cutting at 2500 calories. What should I adjust?",
+    "context": "User bench is stalled, cutting at moderate deficit, 171 lbs, protein at 200g.",
+    "expected_criteria": [
+      "Must recommend maintaining intensity (weight on bar) rather than dropping load",
+      "Must acknowledge that stalls are expected during a caloric deficit",
+      "Should suggest exercise variations or technique adjustments to break the plateau",
+      "Should not recommend aggressive volume increases during a deficit"
+    ]
+  },
+  {
+    "id": "deload_needed",
+    "name": "Overreaching signals — deload recommendation",
+    "query": "My lifts have been going down for 2 weeks and I feel exhausted. What should I do?",
+    "context": "User showing signs of accumulated fatigue, performance declining, cutting phase.",
+    "expected_criteria": [
+      "Must recommend a deload or rest period",
+      "Must not recommend pushing through or adding more volume",
+      "Should mention reducing volume by 40-50% while maintaining intensity",
+      "Should consider the caloric deficit as a contributing factor to fatigue"
+    ]
+  },
+  {
+    "id": "injury_shoulder",
+    "name": "Shoulder injury — exercise modification",
+    "query": "I tweaked my shoulder doing overhead press. How should I adjust my training?",
+    "context": "User has a shoulder injury, needs to modify pressing movements.",
+    "expected_criteria": [
+      "Must recommend avoiding or modifying overhead pressing movements",
+      "Must not recommend exercises that would aggravate a shoulder injury",
+      "Should suggest alternative exercises that train the same muscle groups safely",
+      "Should recommend maintaining training for unaffected muscle groups"
+    ]
+  },
+  {
+    "id": "research_volume_deficit",
+    "name": "Research query — volume during a deficit",
+    "query": "What does the research say about how much volume I need during a cut?",
+    "context": "User asking about evidence-based volume recommendations during caloric deficit.",
+    "expected_criteria": [
+      "Must reference specific research or researchers (e.g. Helms, Schoenfeld, or Israetel)",
+      "Must mention that volume should be reduced during a deficit",
+      "Must mention that intensity should be maintained to preserve muscle",
+      "Should provide specific volume reduction guidelines (e.g. 20-30% reduction)"
+    ]
+  },
+  {
+    "id": "biceps_triceps_gap",
+    "name": "Arm volume gap identification",
+    "query": "Are my arms getting enough volume?",
+    "context": "User biceps at 3 sets/wk (target 8-11), triceps at 4.5 sets/wk (target 6-9).",
+    "expected_criteria": [
+      "Must identify biceps as significantly undertrained",
+      "Must recommend adding bicep exercises with specific sets and reps",
+      "Should identify triceps as slightly below target",
+      "Should prioritize biceps over triceps since the gap is larger"
+    ]
+  },
+  {
+    "id": "lookup_last_workout",
+    "name": "Simple lookup — last workout",
+    "query": "What did I do in my last workout?",
+    "context": "Simple data lookup, should not require an LLM call.",
+    "expected_criteria": [
+      "Must list the exercises from the most recent workout",
+      "Must include weights and reps for each exercise",
+      "Should be routed as a lookup (no LLM call)",
+      "Must not hallucinate exercises that weren't performed"
+    ]
+  }
+]

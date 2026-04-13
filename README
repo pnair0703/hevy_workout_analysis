@@ -1,0 +1,167 @@
+# 🏋️ Hevy Workout Analysis — Agentic AI Training Coach
+
+An AI-powered training coach that connects to your [Hevy](https://hevyapp.com) workout data and provides evidence-based programming recommendations using a multi-model agent architecture.
+
+## What it does
+
+Ask questions about your training in natural language. The agent pulls your real workout history, analyzes volume and gaps, retrieves sports science literature, accounts for your nutrition/training phase, and returns specific programming recommendations with citations.
+
+**Example queries:**
+- *"My incline bench stalled at 200 lbs and I'm cutting at 2500 cal. What should I adjust?"*
+- *"Are my arms getting enough volume?"*
+- *"What does the research say about training volume during a deficit?"*
+- *"What did I do in my last workout?"*
+
+## Architecture
+
+```
+User query
+    ↓
+MoM Router (classifies → selects model)
+    ↓
+┌──────────┬──────────┬──────────┬──────────┐
+│ gpt-4o-  │  gpt-4o  │  direct  │ gpt-4o-  │
+│   mini   │          │  lookup  │   mini   │
+│(program) │(coaching)│ (no LLM) │(research)│
+└──────────┴──────────┴──────────┴──────────┘
+    ↓
+Tools: Hevy API → Volume Calculator → RAG → Nutrition Checker
+    ↓
+Anomaly Detection (z-score + Isolation Forest)
+    ↓
+Structured Output (Pydantic)
+    ↓
+Eval Harness (LLM-as-judge, 7/7 passing)
+```
+
+### Mixture of Models (MoM)
+
+Instead of routing every query to the same LLM, a lightweight classifier selects the optimal model per query type:
+
+| Query Type | Model | Cost | Example |
+|---|---|---|---|
+| Lookup | None (direct API) | $0 | "What was my bench PR?" |
+| Programming | gpt-4o-mini | ~$0.001 | "What exercises for chest?" |
+| Coaching | gpt-4o | ~$0.01 | "My bench stalled during a cut" |
+| Research | gpt-4o-mini + RAG | ~$0.001 | "What does the research say?" |
+
+### Anomaly Detection
+
+Three-layer gap detection system:
+
+1. **Rule-based thresholds** — flags muscles below minimum effective volume (MEV) from sports science literature (Schoenfeld, Israetel)
+2. **Z-score per muscle group** — compares current week against the user's personal rolling baseline, flags deviations > 1.5σ
+3. **Isolation Forest** — trains on the full weekly volume profile across all muscle groups to detect abnormal overall training patterns
+
+### Eval Suite
+
+7 test scenarios graded by an LLM-as-judge with specific pass/fail criteria:
+
+- **7/7 passing**, average score **0.89**
+- Scenarios include: gap detection, stalled lifts during a cut, deload recommendations, injury modifications, research queries, and data lookups
+- Each scenario validates routing accuracy, recommendation quality, safety, and citation of evidence
+
+## Tech Stack
+
+- **LangGraph** — agent orchestration with conditional routing
+- **OpenAI** — gpt-4o / gpt-4o-mini for generation, text-embedding-3-small for RAG
+- **ChromaDB** — local vector database for sports science literature
+- **Pydantic** — structured outputs for recommendations and analysis
+- **scikit-learn** — Isolation Forest for pattern anomaly detection
+- **Hevy API** — real workout data integration
+- **Streamlit** — dashboard + chat interface
+- **pytest** — eval harness with LLM-as-judge scoring
+
+## Setup
+
+### Prerequisites
+
+- Python 3.12
+- [Hevy Pro](https://hevyapp.com) account (for API access)
+- OpenAI API key
+
+### Install
+
+```bash
+git clone https://github.com/pnair0703/hevy_workout_analysis.git
+cd hevy_workout_analysis
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install httpx pydantic python-dotenv chromadb openai langgraph langchain-core langchain-openai scikit-learn numpy streamlit pytest
+```
+
+### Configure
+
+```bash
+cp .env.example .env
+# Edit .env with your keys:
+#   HEVY_API_KEY=your_hevy_api_key
+#   OPENAI_API_KEY=your_openai_api_key
+```
+
+Get your Hevy API key at [hevy.com/settings?developer](https://hevy.com/settings?developer).
+
+### Run
+
+```bash
+# Dashboard + chat UI
+streamlit run frontend/app.py
+
+# Run the agent directly
+python test_agent.py
+
+# Run eval suite
+pytest evals/run_evals.py -v -s
+
+# Test individual components
+python test_hevy.py       # Hevy API connection
+python test_rag.py        # RAG pipeline + nutrition
+python test_anomaly.py    # Anomaly detection
+```
+
+## Project Structure
+
+```
+hevy_workout_analysis/
+├── frontend/
+│   └── app.py                 # Streamlit UI (dashboard + chat)
+├── src/
+│   ├── agent/
+│   │   ├── graph.py           # LangGraph pipeline
+│   │   ├── nodes.py           # Agent nodes (router, tools, synthesizer)
+│   │   ├── router.py          # MoM query classifier
+│   │   └── state.py           # Agent state definition
+│   ├── tools/
+│   │   ├── hevy.py            # Hevy API client
+│   │   ├── volume_calc.py     # Volume analysis + gap detection
+│   │   ├── anomaly.py         # Z-score + Isolation Forest
+│   │   ├── rag.py             # RAG pipeline (Chroma + OpenAI embeddings)
+│   │   └── nutrition.py       # Phase-aware nutrition constraints
+│   ├── models/
+│   │   ├── workout.py         # Pydantic models for Hevy data
+│   │   └── program.py         # Pydantic models for recommendations
+│   └── data/
+│       └── knowledge/         # Sports science docs for RAG
+└── evals/
+    ├── run_evals.py           # LLM-as-judge eval runner
+    ├── scenarios/
+    │   └── test_scenarios.json # 7 test cases
+    └── judges/
+        └── judge_prompts.py   # Judge prompt templates
+```
+
+## Eval Results
+
+| Scenario | Score | Route |
+|---|---|---|
+| Critical chest volume gap | 0.75 | coaching → gpt-4o |
+| Stalled bench during cut | 0.75 | coaching → gpt-4o |
+| Overreaching / deload | 1.00 | coaching → gpt-4o |
+| Shoulder injury modification | 1.00 | coaching → gpt-4o |
+| Research: volume during deficit | 1.00 | research → gpt-4o-mini |
+| Arm volume gap identification | 0.75 | coaching → gpt-4o |
+| Simple data lookup | 1.00 | lookup → none |
+
+## License
+
+MIT
