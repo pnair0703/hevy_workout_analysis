@@ -1,0 +1,11 @@
+httpx
+pydantic
+python-dotenv
+chromadb
+openai
+langgraph
+langchain-core
+langchain-openai
+scikit-learn
+numpy
+streamlit
